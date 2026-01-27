@@ -1,18 +1,11 @@
 pipeline {
     agent any
-    environment {
-        STRING = "Need to change immediately"
-    }
+  
     stages {
-        stage ('Hello') {
+        stage ('SCM') {
             steps {
-                echo 'Hello Jenkins!!'
-                script {
-                    def words = env.STRING.split(' ')
-                    for (word in words){
-                        echo word
-                    }
-                }
+                git branch: 'main', url: 'https://github.com/rammohan97/Declarative-pipeline.git'
+                
             }
         }
     }
