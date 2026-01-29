@@ -21,8 +21,9 @@ pipeline {
                     return params.branch == "release"
                 }
             }
-            echo 'packaging the code'
-
+            steps {
+                    echo 'packaging the code'
+            }
         }
     }
 }
