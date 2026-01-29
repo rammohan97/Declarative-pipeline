@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+    parameters {
+        string("name: 'branch', defaultValue: 'main', description: 'Branch to fetch pipeline'")
+    }
+
     triggers {
         cron('0 3 * * 1-5')
     }
@@ -21,9 +26,8 @@ pipeline {
                     return params.branch == "release"
                 }
             }
-            steps {
-                    echo 'packaging the code'
-            }
+            echo 'packaging the code'
+
         }
     }
 }
