@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string("name: 'branch', defaultValue: 'main', description: 'Branch to fetch pipeline'")
+        string(name: 'branch', defaultValue: 'main', description: 'Branch to fetch pipeline')
     }
 
     triggers {
