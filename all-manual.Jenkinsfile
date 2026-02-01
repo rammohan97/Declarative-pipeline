@@ -18,7 +18,7 @@ pipeline {
                 }
             }
         stage ('Unit Test'){
-                stesp {
+                steps {
                     echo 'Unit tests'
                 }
             }
