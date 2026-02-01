@@ -16,5 +16,10 @@ pipeline {
                 sh 'mkdir -p tests && echo "test results" > tests/testresults.xml'
             }
         }
+        stage ('Artifacts'){
+            steps {
+                archiveArtifacts artifacts: ARTIFACT_SOURCE_DIRECTORY, followSymlinks: false
+            }
+        }
     }
 }
